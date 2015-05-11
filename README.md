@@ -3,6 +3,7 @@ Simple Swift class that animates an UIImageView inside a UIView. A UILabel can b
 
 # Initialisation
 Just copy the class into your project and call SBAnimatedLoaderView()
+You must copy your sprites or images into your project directory and give them a name like sora_0, sora_1 etc...
 Example :
 ```
 var loader = SBAnimatedLoaderView()
