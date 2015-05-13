@@ -8,7 +8,7 @@
 - You must copy your sprites or images into your project directory and give them a name like sora_0, sora_1 etc...
 - While choosing the spriteName, juste give every character before your sprite number (e.g: sora_)
 Example :
-```
+```swift
 var loader = SBAnimatedLoaderView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +20,10 @@ var loader = SBAnimatedLoaderView()
     }
 ```
 # Display the loader
-```
+```swift
 loader.show()
 ```
 #Dismiss the loader
-```
+```swift
 loader.hide()
 ```
