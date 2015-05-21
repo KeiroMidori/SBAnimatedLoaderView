@@ -43,7 +43,8 @@ class SBAnimatedLoaderView: UIView {
         loadingLabel.numberOfLines = 0
         loadingLabel.textAlignment = NSTextAlignment.Center
         loadingLabel.textColor = labelTextColor
-        
+        self.transform = CGAffineTransformScale(self.transform, 1.5, 1.5);
+
         self.addSubview(loadingLabel)
     }
     
