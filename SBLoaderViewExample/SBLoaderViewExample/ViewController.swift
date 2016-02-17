@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var loader = SBAnimatedLoaderView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let width = 150 as CGFloat
+        let width: CGFloat = 150
         let frame = CGRectMake((self.view.frame.width - width) / 2, (self.view.frame.height - width) / 2, width, width)
         let LoaderbackgroundColor = UIColor(red: CGFloat(22.0/255.0), green: CGFloat(158.0/255.0), blue: CGFloat(224.0/255.0), alpha: CGFloat(1.0))
         loader = SBAnimatedLoaderView(frame: frame, color: LoaderbackgroundColor, spriteName: "sora_", numberOfSprites: 8, animationDuration: 0.8, labelString: "Loading...", labelTextColor: UIColor.whiteColor())
@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func displayLoadingView(sender: AnyObject) {
-        loader.show()
         self.view.addSubview(loader)
+        loader.show()
     }
     
     @IBAction func dismissLoadingView(sender: AnyObject) {

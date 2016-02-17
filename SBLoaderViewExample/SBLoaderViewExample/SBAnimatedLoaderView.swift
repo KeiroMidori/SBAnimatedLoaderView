@@ -25,20 +25,22 @@ class SBAnimatedLoaderView: UIView {
         self.alpha = 0.0
         self.layer.cornerRadius = 10
         
-        var soraImageView = UIImageView(frame: CGRectMake((self.frame.width - 55) / 2, 30, 50, 50))
-        soraImageView.contentMode = UIViewContentMode.Center
-        var spriteArray = NSMutableArray(capacity: 0)
+        let imageView = UIImageView(frame: CGRectMake((self.frame.width - 55) / 2, 30, 50, 50))
+        imageView.contentMode = UIViewContentMode.Center
+        var spriteArray = [UIImage]()
         for(var i = 0; i < numberOfSprites; i++) {
-            var image = UIImage(named: NSString(format: "%@%d", spriteName, i) as String)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            spriteArray.addObject(image!)
+            if let image = UIImage(named: "\(spriteName)\(i)") {
+                image.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+                spriteArray.append(image)
+            }
         }
         
-        soraImageView.animationImages = spriteArray as [AnyObject]
-        soraImageView.animationDuration = animationDuration
-        self.addSubview(soraImageView)
-        soraImageView.startAnimating()
+        imageView.animationImages = spriteArray
+        imageView.animationDuration = animationDuration
+        self.addSubview(imageView)
+        imageView.startAnimating()
         
-        var loadingLabel = UILabel(frame: CGRectMake((self.frame.width - 115) / 2, self.frame.height - 40, 115, 20))
+        let loadingLabel = UILabel(frame: CGRectMake((self.frame.width - 115) / 2, self.frame.height - 40, 115, 20))
         loadingLabel.text = labelString
         loadingLabel.numberOfLines = 0
         loadingLabel.textAlignment = NSTextAlignment.Center
@@ -68,7 +70,7 @@ class SBAnimatedLoaderView: UIView {
         super.init(frame: frame)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
