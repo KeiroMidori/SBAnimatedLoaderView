@@ -1,6 +1,6 @@
 # SBAnimatedLoaderView
 - Simple Swift class that animates an UIImageView inside a UIView. A UILabel can be set as well
-- iOS 8.3 Swift 1.2 <br>
+- iOS 9.2 Swift 2.1 Xcode 7.2 <br>
 <img src="./Screenshots/screen1.png" alt="alt text" width="300" height="550" align="center"><img src="./Screenshots/LoaderGif.gif" alt="alt text" width="300" height="550" align="center">
 
 # Initialisation
